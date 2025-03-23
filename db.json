@@ -1,0 +1,546 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "user1",
+      "email": "user1@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "42a9",
+      "username": "reza",
+      "email": "reza@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "3",
+      "username": "sara",
+      "email": "sara@example.com",
+      "password": "sara1234"
+    },
+    {
+      "id": "4",
+      "username": "ali",
+      "email": "ali@example.com",
+      "password": "ali5678"
+    },
+    {
+      "id": "5",
+      "username": "maryam",
+      "email": "maryam@gmail.com",
+      "password": "maryam90"
+    },
+    {
+      "id": "6",
+      "username": "mohammad",
+      "email": "mohammad@example.com",
+      "password": "moh1234"
+    },
+    {
+      "id": "7",
+      "username": "zahra",
+      "email": "zahra@gmail.com",
+      "password": "z123456"
+    },
+    {
+      "id": "8",
+      "username": "hossein",
+      "email": "hossein@example.com",
+      "password": "hos9876"
+    },
+    {
+      "id": "9",
+      "username": "fateme",
+      "email": "fateme@gmail.com",
+      "password": "fat4321"
+    },
+    {
+      "id": "10",
+      "username": "amir",
+      "email": "amir@example.com",
+      "password": "amir1010"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "questionId": "1",
+      "sender": "sara",
+      "message": "پارک ملت در پاییز خیلی زیباست",
+      "time": "10:28",
+      "isSentByMe": false,
+      "avatar": "assets/images/avatar1.jpg",
+      "replyTo": null
+    },
+    {
+      "id": "2",
+      "questionId": "1",
+      "sender": "fateme",
+      "message": "این خوب",
+      "time": "10:28",
+      "isSentByMe": false,
+      "avatar": "assets/images/avatar2.jpg",
+      "replyTo": null
+    },
+    {
+      "id": "3",
+      "questionId": "1",
+      "sender": "mohammad",
+      "message": "باید یک روز به پارک لاله هم سر بزنی",
+      "time": "10:28",
+      "isSentByMe": false,
+      "avatar": "assets/images/avatar3.jpg",
+      "replyTo": {
+        "sender": "sara",
+        "message": "پارک ملت در پاییز خیلی زیباست"
+      }
+    },
+    {
+      "id": "4",
+      "questionId": "1",
+      "sender": "ali",
+      "message": "کسی می‌تونه حدس بزنه من کجام؟",
+      "time": "10:28",
+      "isSentByMe": false,
+      "avatar": "assets/images/avatar3.jpg",
+      "replyTo": null
+    },
+    {
+      "id": "5",
+      "questionId": "1",
+      "sender": "reza",
+      "message": "میدان آزادی! چند روز اونجا هستی؟",
+      "time": "10:28",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "ali",
+        "message": "کسی می‌تونه حدس بزنه من کجام؟"
+      }
+    },
+    {
+      "id": "6",
+      "questionId": "1",
+      "sender": "reza",
+      "message": "من هم موافقم، پارک لاله عالیه مخصوصا در فصل بهار",
+      "time": "10:29",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "mohammad",
+        "message": "باید یک روز به پارک لاله هم سر بزنی"
+      }
+    },
+    {
+      "id": "7",
+      "questionId": "1",
+      "sender": "reza",
+      "message": "من هم عاشق پارک ملت هستم، مخصوصا غروب‌ها",
+      "time": "10:30",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "sara",
+        "message": "پارک ملت در پاییز خیلی زیباست"
+      }
+    },
+    {
+      "id": "1",
+      "questionId": "2",
+      "sender": "mohammad",
+      "message": "پارک ملت در پاییز خیلی زیباست",
+      "time": "10:28",
+      "isSentByMe": false,
+      "avatar": "assets/images/avatar1.jpg",
+      "replyTo": null
+    },
+    {
+      "id": "6",
+      "questionId": "2",
+      "sender": "sara",
+      "message": "من هم موافقم، پارک لاله عالیه مخصوصا در فصل بهار",
+      "time": "10:29",
+      "isSentByMe": false,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "mohammad",
+        "message": "باید یک روز به پارک لاله هم سر بزنی"
+      }
+    },
+    {
+      "id": "7",
+      "questionId": "2",
+      "sender": "reza",
+      "message": "من هم عاشق پارک ملت هستم، مخصوصا غروب‌ها",
+      "time": "10:30",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "mohammad",
+        "message": "پارک ملت در پاییز خیلی زیباست"
+      }
+    },
+    {
+      "id": "1742716484255",
+      "sender": "reza",
+      "message": "عالی",
+      "time": "0:54",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "ali",
+        "message": "کسی می‌تونه حدس بزنه من کجام؟"
+      },
+      "additionalSender": null,
+      "additionalMessage": null,
+      "questionId": "1"
+    },
+    {
+      "id": "1742716892313",
+      "sender": "reza",
+      "message": "عالی نیست",
+      "time": "1:01",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "reza",
+        "message": "عالی"
+      },
+      "additionalSender": null,
+      "additionalMessage": null,
+      "questionId": "1"
+    },
+    {
+      "id": "1742716993246",
+      "sender": "reza",
+      "message": "یسیسیس",
+      "time": "1:03",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "reza",
+        "message": "عالی نیست"
+      },
+      "additionalSender": null,
+      "additionalMessage": null,
+      "questionId": "1"
+    },
+    {
+      "id": "1742719751337",
+      "sender": "user1",
+      "message": "یبیبی",
+      "time": "1:49",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "reza",
+        "message": "یسیسیس"
+      },
+      "additionalSender": null,
+      "additionalMessage": null,
+      "questionId": "1"
+    },
+    {
+      "id": "1742719811644",
+      "sender": "reza",
+      "message": "xcxcxc",
+      "time": "1:50",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "user1",
+        "message": "یبیبی"
+      },
+      "additionalSender": null,
+      "additionalMessage": null,
+      "questionId": "1"
+    },
+    {
+      "id": "1742719825981",
+      "sender": "user1",
+      "message": "cvvcv",
+      "time": "1:50",
+      "isSentByMe": true,
+      "avatar": "assets/images/avatar4.jpg",
+      "replyTo": {
+        "sender": "reza",
+        "message": "عالی نیست"
+      },
+      "additionalSender": null,
+      "additionalMessage": null,
+      "questionId": "1"
+    }
+  ],
+  "fields": [
+    {
+      "id": "1",
+      "field": "ریاضی و فیزیک",
+      "description": "دوره آموزشی مفاهیم پایه ریاضیات"
+    },
+    {
+      "id": "2",
+      "field": "علوم تجربی",
+      "description": "آموزش مفاهیم پایه زیست شناسی"
+    },
+    {
+      "id": "3",
+      "field": "علوم انسانی",
+      "description": "مروری بر تاریخ ایران"
+    }
+  ],
+  "years": [
+    {
+      "id": "1",
+      "year": "1404",
+      "description": "سال تحصیلی ۱۴۰۴"
+    },
+    {
+      "id": "2",
+      "year": "1403",
+      "description": "سال تحصیلی ۱۴۰۳"
+    },
+    {
+      "id": "3",
+      "year": "1402",
+      "description": "سال تحصیلی ۱۴۰۲"
+    },
+    {
+      "id": "4",
+      "year": "1401",
+      "description": "سال تحصیلی ۱۴۰۱"
+    },
+    {
+      "id": "5",
+      "year": "1400",
+      "description": "سال تحصیلی ۱۴۰۰"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "name": "ریاضی"
+    },
+    {
+      "id": "2",
+      "name": "فیزیک"
+    },
+    {
+      "id": "3",
+      "name": "شیمی"
+    },
+    {
+      "id": "4",
+      "name": "زبان انگلیسی"
+    },
+    {
+      "id": "5",
+      "name": "ادبیات فارسی"
+    },
+    {
+      "id": "6",
+      "name": "عربی"
+    },
+    {
+      "id": "7",
+      "name": "دین و زندگی"
+    },
+    {
+      "id": "8",
+      "name": "زمین‌شناسی"
+    }
+  ],
+  "questions": [
+    {
+      "id": "1",
+      "courseId": "1",
+      "text": "چگونه می‌توان عملکرد برنامه‌های جاوا را بهینه‌سازی کرد؟",
+      "likes": 25,
+      "comments": 12,
+      "timeAgo": "۱ روز",
+      "answers": [
+        {
+          "id": "1-1",
+          "text": "برای بهینه‌سازی برنامه‌های جاوا می‌توان از تکنیک‌هایی مانند استفاده از پول‌های اتصال، کش‌کردن داده‌ها، بهینه‌سازی الگوریتم‌ها، استفاده از ساختارهای داده مناسب و تنظیم پارامترهای JVM استفاده کرد.",
+          "likes": 12,
+          "comments": 8,
+          "timeAgo": "۲ ساعت"
+        },
+        {
+          "id": "1-2",
+          "text": "استفاده از ابزارهای پروفایلینگ مانند JProfiler یا VisualVM می‌تواند به شناسایی نقاط کند برنامه کمک کند. همچنین استفاده از تکنیک‌های مانند Lazy Loading و استفاده بهینه از حافظه هم مؤثر است.",
+          "likes": 7,
+          "comments": 3,
+          "timeAgo": "۱ روز"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "courseId": "1",
+      "text": "تفاوت بین REST و SOAP چیست؟",
+      "likes": 32,
+      "comments": 18,
+      "timeAgo": "۲ روز",
+      "answers": [
+        {
+          "id": "2-1",
+          "text": "REST یک معماری سبک‌تر و انعطاف‌پذیرتر است که از HTTP استفاده می‌کند، در حالی که SOAP یک پروتکل استاندارد با قوانین سخت‌گیرانه‌تر است.",
+          "likes": 15,
+          "comments": 10,
+          "timeAgo": "۳ ساعت"
+        },
+        {
+          "id": "2-2",
+          "text": "REST از فرمت‌های مختلف داده مانند JSON و XML پشتیبانی می‌کند. SOAP معمولاً در سیستم‌های سازمانی که نیاز به امنیت و قابلیت اطمینان بالا دارند استفاده می‌شود.",
+          "likes": 9,
+          "comments": 5,
+          "timeAgo": "۵ ساعت"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "courseId": "1",
+      "text": "مزایای استفاده از TypeScript نسبت به JavaScript چیست؟",
+      "likes": 28,
+      "comments": 15,
+      "timeAgo": "۳ روز",
+      "answers": [
+        {
+          "id": "3-1",
+          "text": "TypeScript مزایای زیادی نسبت به JavaScript دارد، از جمله: سیستم تایپ استاتیک که خطاها را زودتر تشخیص می‌دهد، پشتیبانی بهتر IDE با تکمیل کد و رفاکتورینگ، قابلیت نگهداری بهتر برای پروژه‌های بزرگ.",
+          "likes": 14,
+          "comments": 8,
+          "timeAgo": "۵ ساعت"
+        },
+        {
+          "id": "3-2",
+          "text": "امکان استفاده از ویژگی‌های جدید JavaScript قبل از پشتیبانی رسمی مرورگرها، کاهش خطاهای زمان اجرا، و مستندسازی بهتر کد از دیگر مزایای TypeScript است.",
+          "likes": 6,
+          "comments": 2,
+          "timeAgo": "۱ روز"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "courseId": "2",
+      "text": "قانون دوم نیوتن چیست و چگونه در مسائل فیزیک کاربرد دارد؟",
+      "likes": 42,
+      "comments": 22,
+      "timeAgo": "۴ روز",
+      "answers": [
+        {
+          "id": "4-1",
+          "text": "قانون دوم نیوتن بیان می‌کند که نیروی وارد بر جسم برابر است با حاصل‌ضرب جرم در شتاب (F=ma). این قانون پایه بسیاری از محاسبات در مکانیک کلاسیک است.",
+          "likes": 18,
+          "comments": 7,
+          "timeAgo": "۱ روز"
+        },
+        {
+          "id": "4-2",
+          "text": "از قانون دوم نیوتن می‌توان برای محاسبه شتاب، سرعت و مکان اجسام تحت تأثیر نیروهای مختلف استفاده کرد. این قانون در طراحی سازه‌ها، وسایل نقلیه و تحلیل حرکت اجسام کاربرد گسترده‌ای دارد.",
+          "likes": 12,
+          "comments": 5,
+          "timeAgo": "۲ روز"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "courseId": "2",
+      "text": "اصل پایستگی انرژی چیست و چگونه در مسائل فیزیک استفاده می‌شود؟",
+      "likes": 36,
+      "comments": 19,
+      "timeAgo": "۵ روز",
+      "answers": [
+        {
+          "id": "5-1",
+          "text": "اصل پایستگی انرژی بیان می‌کند که انرژی نه به وجود می‌آید و نه از بین می‌رود، بلکه از شکلی به شکل دیگر تبدیل می‌شود. مجموع انرژی در یک سیستم بسته همواره ثابت است.",
+          "likes": 20,
+          "comments": 9,
+          "timeAgo": "۲ روز"
+        },
+        {
+          "id": "5-2",
+          "text": "از این اصل در حل مسائل مکانیک، ترمودینامیک و الکترومغناطیس استفاده می‌شود. به عنوان مثال، در مسائل برخورد، تبدیل انرژی پتانسیل به جنبشی و محاسبه کار و گرما.",
+          "likes": 15,
+          "comments": 6,
+          "timeAgo": "۳ روز"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "courseId": "3",
+      "text": "تفاوت بین اسیدها و بازها چیست و چگونه شناسایی می‌شوند؟",
+      "likes": 31,
+      "comments": 16,
+      "timeAgo": "۲ روز",
+      "answers": [
+        {
+          "id": "6-1",
+          "text": "اسیدها موادی هستند که در آب یون هیدروژن (H+) آزاد می‌کنند، در حالی که بازها یون هیدروکسید (OH-) آزاد می‌کنند. اسیدها طعم ترش دارند و بازها طعم تلخ و احساس صابونی.",
+          "likes": 17,
+          "comments": 8,
+          "timeAgo": "۱ روز"
+        },
+        {
+          "id": "6-2",
+          "text": "برای شناسایی اسیدها و بازها از شناساگرهایی مانند کاغذ pH، فنول فتالئین و متیل اورانژ استفاده می‌شود. اسیدها pH کمتر از 7 و بازها pH بیشتر از 7 دارند.",
+          "likes": 12,
+          "comments": 5,
+          "timeAgo": "۱ روز"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "courseId": "4",
+      "text": "تفاوت بین زمان حال کامل و زمان گذشته ساده در زبان انگلیسی چیست؟",
+      "likes": 45,
+      "comments": 23,
+      "timeAgo": "۳ روز",
+      "answers": [
+        {
+          "id": "7-1",
+          "text": "زمان حال کامل (Present Perfect) برای بیان عملی که در گذشته انجام شده و اثر آن تا زمان حال ادامه دارد استفاده می‌شود، مانند: I have lived here for 10 years. در حالی که زمان گذشته ساده (Simple Past) برای بیان عملی که در گذشته انجام و تمام شده استفاده می‌شود، مانند: I lived there last year.",
+          "likes": 22,
+          "comments": 11,
+          "timeAgo": "۱ روز"
+        },
+        {
+          "id": "7-2",
+          "text": "زمان حال کامل با have/has + past participle ساخته می‌شود، در حالی که زمان گذشته ساده با فعل گذشته (فعل + ed یا شکل دوم فعل‌های بی‌قاعده) ساخته می‌شود.",
+          "likes": 18,
+          "comments": 9,
+          "timeAgo": "۲ روز"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "courseId": "5",
+      "text": "آرایه‌های ادبی چیست و چه کاربردی در شعر و نثر دارند؟",
+      "likes": 38,
+      "comments": 20,
+      "timeAgo": "۴ روز",
+      "answers": [
+        {
+          "id": "8-1",
+          "text": "آرایه‌های ادبی ابزارهایی هستند که برای زیباتر کردن کلام و تأثیرگذاری بیشتر بر مخاطب استفاده می‌شوند. مانند تشبیه، استعاره، کنایه و مجاز.",
+          "likes": 19,
+          "comments": 8,
+          "timeAgo": "۲ روز"
+        },
+        {
+          "id": "8-2",
+          "text": "این آرایه‌ها به شاعر و نویسنده کمک می‌کنند تا مفاهیم را به شکلی هنرمندانه و تأثیرگذار بیان کنند و باعث غنای ادبی متن می‌شوند.",
+          "likes": 15,
+          "comments": 7,
+          "timeAgo": "۳ روز"
+        }
+      ]
+    }
+  ]
+}
