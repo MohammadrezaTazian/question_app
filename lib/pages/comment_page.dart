@@ -8,11 +8,11 @@ class CommentPage extends StatefulWidget {
   final String currentUsername; // Add this parameter
 
   const CommentPage({
-    Key? key,
+    super.key,
     required this.questionId,
     required this.questionText,
     required this.currentUsername, // Add this parameter
-  }) : super(key: key);
+  });
 
   @override
   State<CommentPage> createState() => _CommentPageState();
@@ -171,7 +171,7 @@ class _CommentPageState extends State<CommentPage> {
         ),
         title: Text(
           widget.questionText.length > 40 
-              ? widget.questionText.substring(0, 40) + '...' 
+              ? '${widget.questionText.substring(0, 40)}...' 
               : widget.questionText,
           style: const TextStyle(
             color: Colors.black,

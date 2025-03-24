@@ -22,7 +22,7 @@ class _CourseSelectionPageState extends State<CourseSelectionPage> {
   final TextEditingController _searchController = TextEditingController();
   List<Course> _courses = [];
   List<Course> _filteredCourses = [];
-  int _currentIndex = -1; // No item selected by default
+  final int _currentIndex = -1; // No item selected by default
   bool _isLoading = true;
   String _errorMessage = '';
 

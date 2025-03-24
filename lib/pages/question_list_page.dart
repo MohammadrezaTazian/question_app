@@ -10,10 +10,10 @@ class QuestionListPage extends StatefulWidget {
   final String courseName;
 
   const QuestionListPage({
-    Key? key,
+    super.key,
     required this.courseId,
     required this.courseName,
-  }) : super(key: key);
+  });
 
   @override
   State<QuestionListPage> createState() => _QuestionListPageState();
@@ -176,7 +176,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  question.timeAgo + ' پیش',
+                  '${question.timeAgo} پیش',
                   style: TextStyle(
                     color: Colors.grey[600],
                     fontSize: 12,
@@ -302,7 +302,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                answer.timeAgo + ' پیش',
+                '${answer.timeAgo} پیش',
                 style: TextStyle(
                   color: Colors.grey[600],
                   fontSize: 12,
@@ -321,7 +321,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
                         MaterialPageRoute(
                           builder: (context) => CommentPage(
                             questionId: answer.id,
-                            questionText: answer.text.length > 50 ? answer.text.substring(0, 50) + '...' : answer.text,
+                            questionText: answer.text.length > 50 ? '${answer.text.substring(0, 50)}...' : answer.text,
                             currentUsername: currentUsername, // Add this parameter
                           ),
                         ),

@@ -19,7 +19,7 @@ class _YearSelectionPageState extends State<YearSelectionPage> {
   final TextEditingController _searchController = TextEditingController();
   List<Year> _years = [];
   List<Year> _filteredYears = [];
-  int _currentIndex = -1; // No item selected by default
+  final int _currentIndex = -1; // No item selected by default
   bool _isLoading = true;
   String _errorMessage = '';
 
