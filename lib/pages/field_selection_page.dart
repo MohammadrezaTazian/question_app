@@ -44,13 +44,16 @@ class _FieldSelectionPageState extends State<FieldSelectionPage> {
       setState(() {
         _currentIndex = index;
       });
-      
+
       // Handle navigation based on index
-      if (index == 3) { // Profile
+      if (index == 3) {
+        // Profile
         Navigator.pushReplacementNamed(context, '/profile');
-      } else if (index == 1) { // Questions
+      } else if (index == 1) {
+        // Questions
         print('Navigate to questions page');
-      } else if (index == 2) { // Settings
+      } else if (index == 2) {
+        // Settings
         Navigator.pushReplacementNamed(context, '/settings');
       }
       // No need to navigate if index is 0 (home) as we're already there
@@ -91,64 +94,66 @@ class _FieldSelectionPageState extends State<FieldSelectionPage> {
               ),
             ),
           ),
-          
+
           // Main content with field selection cards
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: _isLoading 
-                ? const Center(child: CircularProgressIndicator())
-                : _errorMessage.isNotEmpty
-                  ? Center(child: Text(_errorMessage, style: const TextStyle(color: Colors.red)))
-                  : ListView.builder(
-                      itemCount: _fields.length,
-                      itemBuilder: (context, index) {
-                        final field = _fields[index];
-                        // Determine color based on index
-                        Color backgroundColor;
-                        Color iconBackgroundColor;
-                        IconData icon;
-                        
-                        switch (index % 3) {
-                          case 0:
-                            backgroundColor = Colors.blue.shade50;
-                            iconBackgroundColor = Colors.blue.shade100;
-                            icon = Icons.functions;
-                            break;
-                          case 1:
-                            backgroundColor = Colors.green.shade50;
-                            iconBackgroundColor = Colors.green.shade100;
-                            icon = Icons.science;
-                            break;
-                          default:
-                            backgroundColor = Colors.yellow.shade50;
-                            iconBackgroundColor = Colors.yellow.shade100;
-                            icon = Icons.menu_book;
-                        }
-                        
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 16.0),
-                          child: FieldCard(
-                            title: field.field,
-                            subtitle: field.description,
-                            icon: icon,
-                            backgroundColor: backgroundColor,
-                            iconBackgroundColor: iconBackgroundColor,
-                            onTap: () {
-                              // Navigate to year selection page with the field name
-                              Navigator.pushNamed(
-                                context,
-                                '/year_selection',
-                                arguments: {'fieldName': field.field},
-                              );
-                            },
-                          ),
-                        );
-                      },
-                    ),
+              child: _isLoading
+                  ? const Center(child: CircularProgressIndicator())
+                  : _errorMessage.isNotEmpty
+                      ? Center(
+                          child: Text(_errorMessage,
+                              style: const TextStyle(color: Colors.red)))
+                      : ListView.builder(
+                          itemCount: _fields.length,
+                          itemBuilder: (context, index) {
+                            final field = _fields[index];
+                            // Determine color based on index
+                            Color backgroundColor;
+                            Color iconBackgroundColor;
+                            IconData icon;
+
+                            switch (index % 3) {
+                              case 0:
+                                backgroundColor = Colors.blue.shade50;
+                                iconBackgroundColor = Colors.blue.shade100;
+                                icon = Icons.functions;
+                                break;
+                              case 1:
+                                backgroundColor = Colors.green.shade50;
+                                iconBackgroundColor = Colors.green.shade100;
+                                icon = Icons.science;
+                                break;
+                              default:
+                                backgroundColor = Colors.yellow.shade50;
+                                iconBackgroundColor = Colors.yellow.shade100;
+                                icon = Icons.menu_book;
+                            }
+
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 16.0),
+                              child: FieldCard(
+                                title: field.field,
+                                subtitle: field.description,
+                                icon: icon,
+                                backgroundColor: backgroundColor,
+                                iconBackgroundColor: iconBackgroundColor,
+                                onTap: () {
+                                  // Navigate to year selection page with the field name
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/year_selection',
+                                    arguments: {'fieldName': field.field},
+                                  );
+                                },
+                              ),
+                            );
+                          },
+                        ),
             ),
           ),
-          
+
           // Use our custom navigation bottom with the proper currentIndex
           CustomNavigationBottom(
             currentIndex: _currentIndex,
@@ -191,7 +196,7 @@ class FieldCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withAlpha(13),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -230,7 +235,7 @@ class FieldCard extends StatelessWidget {
                     subtitle,
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.black.withOpacity(0.7),
+                      color: Colors.black.withAlpha(179),
                     ),
                     textAlign: TextAlign.right,
                   ),

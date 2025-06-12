@@ -44,13 +44,17 @@ class _YearSelectionPageState extends State<YearSelectionPage> {
 
   void _onNavItemTapped(int index) {
     // Handle navigation based on index
-    if (index == 0) { // Home
+    if (index == 0) {
+      // Home
       Navigator.pushReplacementNamed(context, '/field_selection');
-    } else if (index == 1) { // Questions
+    } else if (index == 1) {
+      // Questions
       print('Navigate to questions page');
-    } else if (index == 2) { // Settings
+    } else if (index == 2) {
+      // Settings
       Navigator.pushReplacementNamed(context, '/settings');
-    } else if (index == 3) { // Profile
+    } else if (index == 3) {
+      // Profile
       Navigator.pushReplacementNamed(context, '/profile');
     }
   }
@@ -82,7 +86,8 @@ class _YearSelectionPageState extends State<YearSelectionPage> {
                 Container(
                   width: double.infinity,
                   color: const Color(0xFF2962FF),
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                   child: SafeArea(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,7 +114,7 @@ class _YearSelectionPageState extends State<YearSelectionPage> {
                     ),
                   ),
                 ),
-                
+
                 // Search bar
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -119,7 +124,7 @@ class _YearSelectionPageState extends State<YearSelectionPage> {
                       borderRadius: BorderRadius.circular(30),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
+                          color: Colors.black.withAlpha(26),
                           blurRadius: 10,
                           offset: const Offset(0, 2),
                         ),
@@ -133,17 +138,18 @@ class _YearSelectionPageState extends State<YearSelectionPage> {
                         hintStyle: TextStyle(color: Colors.grey),
                         prefixIcon: Icon(Icons.search, color: Colors.grey),
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                        contentPadding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                       ),
                     ),
                   ),
                 ),
-                
+
                 // Years list
                 Expanded(
                   child: _buildYearsList(state),
                 ),
-                
+
                 // Use CustomNavigationBottom with no item selected
                 CustomNavigationBottom(
                   currentIndex: _currentIndex,
@@ -161,12 +167,15 @@ class _YearSelectionPageState extends State<YearSelectionPage> {
     if (state is YearSelectionLoading) {
       return const Center(child: CircularProgressIndicator());
     } else if (state is YearSelectionError) {
-      return Center(child: Text(state.message, style: const TextStyle(color: Colors.red)));
+      return Center(
+          child:
+              Text(state.message, style: const TextStyle(color: Colors.red)));
     } else if (state is YearSelectionLoaded) {
       return ListView.builder(
         itemCount: state.filteredYears.length,
         itemBuilder: (context, index) {
-          return _buildYearItem(state.filteredYears[index], index, state.selectedIndex == index);
+          return _buildYearItem(
+              state.filteredYears[index], index, state.selectedIndex == index);
         },
       );
     }
@@ -183,12 +192,10 @@ class _YearSelectionPageState extends State<YearSelectionPage> {
         decoration: BoxDecoration(
           color: isSelected ? Colors.green.shade100 : Colors.white,
           borderRadius: BorderRadius.circular(12),
-          border: isSelected 
-              ? Border.all(color: Colors.green, width: 2)
-              : null,
+          border: isSelected ? Border.all(color: Colors.green, width: 2) : null,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withAlpha(13),
               blurRadius: 5,
               offset: const Offset(0, 2),
             ),
@@ -218,7 +225,9 @@ class _YearSelectionPageState extends State<YearSelectionPage> {
                     year.description,
                     style: TextStyle(
                       fontSize: 14,
-                      color: isSelected ? Colors.green.shade700 : Colors.grey.shade700,
+                      color: isSelected
+                          ? Colors.green.shade700
+                          : Colors.grey.shade700,
                     ),
                   ),
                 ],

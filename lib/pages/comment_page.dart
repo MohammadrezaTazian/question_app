@@ -137,9 +137,12 @@ class _CommentPageState extends State<CommentPage> {
       await _commentService.addComment(newComment);
     } catch (e) {
       // Show error message
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('خطا در ارسال پیام: ${e.toString()}')),
-      );
+      // Check if the widget is still mounted before showing SnackBar
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('خطا در ارسال پیام: ${e.toString()}')),
+        );
+      }
     }
   }
 
@@ -239,14 +242,13 @@ class _CommentPageState extends State<CommentPage> {
                 ],
               ),
             ),
-          
           // Message input field
           Container(
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withAlpha(13), // Changed from withOpacity(0.05)
                   blurRadius: 3,
                   offset: const Offset(0, -1),
                 ),
@@ -333,7 +335,7 @@ class _CommentPageState extends State<CommentPage> {
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withAlpha(13), // Changed from withOpacity(0.05)
                           blurRadius: 2,
                           offset: const Offset(0, 1),
                         ),

@@ -37,9 +37,10 @@ class _QuestionListPageState extends State<QuestionListPage> {
         _isLoading = true;
         _errorMessage = '';
       });
-      
-      final questions = await QuestionService.getQuestionsByCourse(widget.courseId);
-      
+
+      final questions =
+          await QuestionService.getQuestionsByCourse(widget.courseId);
+
       setState(() {
         _questions = questions;
         _isLoading = false;
@@ -63,15 +64,19 @@ class _QuestionListPageState extends State<QuestionListPage> {
       setState(() {
         _currentIndex = index;
       });
-      
+
       // Handle navigation based on index
-      if (index == 0) { // Profile
+      if (index == 0) {
+        // Profile
         Navigator.pushReplacementNamed(context, '/profile');
-      } else if (index == 1) { // Notifications
+      } else if (index == 1) {
+        // Notifications
         // Navigate to notifications page
-      } else if (index == 2) { // Questions
+      } else if (index == 2) {
+        // Questions
         // Already on questions page
-      } else if (index == 3) { // Home
+      } else if (index == 3) {
+        // Home
         Navigator.pushReplacementNamed(context, '/field_selection');
       }
     }
@@ -114,21 +119,23 @@ class _QuestionListPageState extends State<QuestionListPage> {
               ),
             ),
           ),
-          
+
           // Questions list
           Expanded(
-            child: _isLoading 
-              ? const Center(child: CircularProgressIndicator())
-              : _errorMessage.isNotEmpty
-                ? Center(child: Text(_errorMessage, style: const TextStyle(color: Colors.red)))
-                : ListView.builder(
-                    itemCount: _questions.length,
-                    itemBuilder: (context, index) {
-                      return _buildQuestionItem(_questions[index], index);
-                    },
-                  ),
+            child: _isLoading
+                ? const Center(child: CircularProgressIndicator())
+                : _errorMessage.isNotEmpty
+                    ? Center(
+                        child: Text(_errorMessage,
+                            style: const TextStyle(color: Colors.red)))
+                    : ListView.builder(
+                        itemCount: _questions.length,
+                        itemBuilder: (context, index) {
+                          return _buildQuestionItem(_questions[index], index);
+                        },
+                      ),
           ),
-          
+
           // Use CustomNavigationBottom
           CustomNavigationBottom(
             currentIndex: _currentIndex,
@@ -147,7 +154,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withAlpha(13),
             blurRadius: 5,
             offset: const Offset(0, 2),
           ),
@@ -168,7 +175,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
               textAlign: TextAlign.right,
             ),
           ),
-          
+
           // Question likes, comments and time ago
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -186,15 +193,17 @@ class _QuestionListPageState extends State<QuestionListPage> {
                 GestureDetector(
                   onTap: () {
                     // Get current username from UserProvider
-                    final currentUsername = UserProvider.getUserData()?['username'] ?? 'guest';
-                    
+                    final currentUsername =
+                        UserProvider.getUserData()?['username'] ?? 'guest';
+
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => CommentPage(
                           questionId: question.id,
                           questionText: question.text,
-                          currentUsername: currentUsername, // Add this parameter
+                          currentUsername:
+                              currentUsername, // Add this parameter
                         ),
                       ),
                     );
@@ -238,7 +247,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
               ],
             ),
           ),
-          
+
           // Show/Hide answer button
           InkWell(
             onTap: () => _toggleAnswerVisibility(index),
@@ -261,14 +270,13 @@ class _QuestionListPageState extends State<QuestionListPage> {
               ),
             ),
           ),
-          
+
           // Answers (if visible)
           if (question.isAnswerVisible)
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                for (var answer in question.answers)
-                  _buildAnswerItem(answer),
+                for (var answer in question.answers) _buildAnswerItem(answer),
               ],
             ),
         ],
@@ -294,9 +302,9 @@ class _QuestionListPageState extends State<QuestionListPage> {
             style: const TextStyle(fontSize: 14),
             textAlign: TextAlign.right,
           ),
-          
+
           const SizedBox(height: 12),
-          
+
           // Likes, comments and time ago
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -314,15 +322,19 @@ class _QuestionListPageState extends State<QuestionListPage> {
                   GestureDetector(
                     onTap: () {
                       // Get current username from UserProvider
-                      final currentUsername = UserProvider.getUserData()?['username'] ?? 'guest';
-                      
+                      final currentUsername =
+                          UserProvider.getUserData()?['username'] ?? 'guest';
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => CommentPage(
                             questionId: answer.id,
-                            questionText: answer.text.length > 50 ? '${answer.text.substring(0, 50)}...' : answer.text,
-                            currentUsername: currentUsername, // Add this parameter
+                            questionText: answer.text.length > 50
+                                ? '${answer.text.substring(0, 50)}...'
+                                : answer.text,
+                            currentUsername:
+                                currentUsername, // Add this parameter
                           ),
                         ),
                       );
@@ -362,9 +374,9 @@ class _QuestionListPageState extends State<QuestionListPage> {
                         size: 18,
                       ),
                     ],
-                ),
-              ],
-                ),
+                  ),
+                ],
+              ),
             ],
           ),
         ],

@@ -24,13 +24,16 @@ class _ProfilePageState extends State<ProfilePage> {
       setState(() {
         _currentIndex = index;
       });
-      
+
       // Handle navigation based on index
-      if (index == 0) { // Home
+      if (index == 0) {
+        // Home
         Navigator.pushReplacementNamed(context, '/field_selection');
-      } else if (index == 1) { // Questions
+      } else if (index == 1) {
+        // Questions
         print('Navigate to questions page');
-      } else if (index == 2) { // Settings
+      } else if (index == 2) {
+        // Settings
         Navigator.pushReplacementNamed(context, '/settings');
       }
       // No need to navigate if index is 3 (profile) as we're already there
@@ -71,7 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
           ),
-          
+
           // Profile content
           Expanded(
             child: SingleChildScrollView(
@@ -80,7 +83,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
-                    
+
                     // Profile avatar
                     CircleAvatar(
                       radius: 60,
@@ -91,9 +94,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: Colors.grey.shade700,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 20),
-                    
+
                     // Username
                     Text(
                       widget.userData['username'] ?? 'کاربر',
@@ -102,9 +105,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 10),
-                    
+
                     // Email
                     Text(
                       widget.userData['email'] ?? 'ایمیل موجود نیست',
@@ -113,9 +116,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: Colors.grey.shade700,
                       ),
                     ),
-                    
+
                     const SizedBox(height: 40),
-                    
+
                     // User info card
                     Container(
                       width: double.infinity,
@@ -125,7 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         borderRadius: BorderRadius.circular(15),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black.withAlpha(13),
                             blurRadius: 10,
                             offset: const Offset(0, 4),
                           ),
@@ -143,23 +146,23 @@ class _ProfilePageState extends State<ProfilePage> {
                             textAlign: TextAlign.right,
                           ),
                           const SizedBox(height: 20),
-                          
+
                           // User ID
                           ProfileInfoItem(
                             title: 'شناسه کاربری',
                             value: widget.userData['id']?.toString() ?? '-',
                           ),
-                          
+
                           const Divider(height: 30),
-                          
+
                           // Username
                           ProfileInfoItem(
                             title: 'نام کاربری',
                             value: widget.userData['username'] ?? '-',
                           ),
-                          
+
                           const Divider(height: 30),
-                          
+
                           // Email
                           ProfileInfoItem(
                             title: 'ایمیل',
@@ -168,9 +171,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
-                    
+
                     const SizedBox(height: 20),
-                    
+
                     // Logout button
                     SizedBox(
                       width: double.infinity,
@@ -178,11 +181,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: ElevatedButton(
                         // In the logout button onPressed callback
                         onPressed: () {
-                        // Clear user data
-                        UserProvider.clearUserData();
-                        
-                        // Navigate to auth page
-                        Navigator.pushReplacementNamed(context, '/');
+                          // Clear user data
+                          UserProvider.clearUserData();
+
+                          // Navigate to auth page
+                          Navigator.pushReplacementNamed(context, '/');
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.red.shade700,
@@ -202,7 +205,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
           ),
-          
+
           // Custom navigation bottom
           CustomNavigationBottom(
             currentIndex: _currentIndex,

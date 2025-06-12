@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:question_app/pages/auth_page.dart';
+import 'package:question_app/pages/auth_page/auth_page.dart';
 import 'package:question_app/pages/course_selection_page.dart';
 import 'package:question_app/providers/user_provider.dart';
 import 'package:question_app/providers/theme_provider.dart';
-import 'package:question_app/blocs/year_selection/year_selection_bloc.dart';
 import 'pages/field_selection_page.dart';
 import 'pages/profile_page.dart';
 import 'pages/settings_page.dart';
