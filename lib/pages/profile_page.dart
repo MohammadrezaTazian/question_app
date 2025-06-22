@@ -31,7 +31,7 @@ class _ProfilePageState extends State<ProfilePage> {
         Navigator.pushReplacementNamed(context, '/field_selection');
       } else if (index == 1) {
         // Questions
-        print('Navigate to questions page');
+        debugPrint('Navigate to questions page');
       } else if (index == 2) {
         // Settings
         Navigator.pushReplacementNamed(context, '/settings');

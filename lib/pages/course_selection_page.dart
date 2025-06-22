@@ -81,7 +81,7 @@ class _CourseSelectionPageState extends State<CourseSelectionPage> {
     } else if (index == 1) { // Courses
       // Already on courses page
     } else if (index == 2) { // Questions
-      print('Navigate to questions page');
+      debugPrint('Navigate to questions page');
     } else if (index == 3) { // Profile
       Navigator.pushReplacementNamed(context, '/profile');
     }

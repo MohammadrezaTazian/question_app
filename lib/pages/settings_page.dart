@@ -25,7 +25,7 @@ class _SettingsPageState extends State<SettingsPage> {
       if (index == 0) { // Home
         Navigator.pushReplacementNamed(context, '/field_selection');
       } else if (index == 1) { // Questions
-        print('Navigate to questions page');
+        debugPrint('Navigate to questions page');
       } else if (index == 3) { // Profile
         Navigator.pushReplacementNamed(context, '/profile');
       }
